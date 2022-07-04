@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array</title>
+    <style>
+        #arac_listesi {
+            display: flex;
+        }
+
+        #arac_listesi > div {
+            border: 1px solid black;
+            padding: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <section id="arac_listesi">
+
+    </section>
+
+    <script>
+        let cars = [ 
+            { marka: "Hyundai", model: "i30", gunluk_fiyat: 1000, otomatik: true, stok: 5, foto_url:"https://lipsum.app/id/1/200x200" } ,
+            { marka: "Volkswagen", model: "Jetta", gunluk_fiyat: 1200, otomatik: true, stok: 3, foto_url:"https://lipsum.app/id/2/200x200" }
+        ];
+        
+        cars.forEach( islem );
+
+        function islem( arac, indeks ) {
+            let html_kodu = `
+                    <h2>Araç ${indeks+1} </h2>
+                    <img src="${arac.foto_url}">
+                    <p> <strong>Marka:</strong> <span> ${arac.marka} </span> </p>
+                    <p> <strong>Model:</strong> <span> ${arac.model} </span> </p>
+                    <p> <strong>Günlük Fiyat:</strong> <span> ${arac.gunluk_fiyat} </span> </p>
+                    <p> <strong>Otomatik:</strong> <span> ${arac.otomatik} </span> </p>
+                    <p> <strong>Stok:</strong> <span> ${arac.stok} </span> </p>
+            `;
+
+            let htmlElemani = document.createElement("div");
+            htmlElemani.innerHTML = html_kodu;
+            document.querySelector("section#arac_listesi").append(htmlElemani);
+        }
+    </script>
+
+</body>
+</html>

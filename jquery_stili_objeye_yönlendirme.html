@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Page 1</title>
+	<style>
+		.renk{
+		background-color: red;
+		border-color: white;
+		}
+	</style>
+</head>
+<body>
+	<button id="b2"> Button 2 </button>
+	<p id="p1"> Internet Based Programming </p>
+	<ul id="sehirler">
+		<li id="li1">Ankara</li>
+		<li id="li2">İstanbul</li>
+		<li id="li3">İzmir</li>
+	</ul>
+
+	
+	
+	<script src="http://code.jquery.com/jquery-3.3.1.slim.js"></script>
+
+	<script>
+	
+    $("#b1").css({"background-color": "white", "border-color": "black"});
+    $("#p1").addClass("renk");
+    
+
+    $("#b2").click(function(){
+        $("#b2").toggleClass("renk");}
+    );
+    
+    </script>
+
+</body>
+</html>
